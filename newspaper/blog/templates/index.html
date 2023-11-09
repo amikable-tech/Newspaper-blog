@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+   <link rel="stylesheet" href="../static/dist/output.css">
+   <link rel="stylesheet" href="../static/src/styles.css">
+    <title>Newspaper Blog</title>
+</head>
+<body>
+    <section class = "hero-primary">
+        <div class="hero-body">
+            <h1 class="title">
+                Latest News
+            </h1>
+        </div>
+    </section>
+    <section class="Section">
+        <div class="container">
+            <div class="rows">
+                <div class="lg:col-span-10 lg:col-start-17">
+                    {% for title, desc, i in mylist %}
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <span class="title">{{ title }}</span>
+                                        <br>
+                                        <img src="{{i}}" alt="">
+                                        <span class = "subtitle">{{desc}}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">Contact Us</footer>
+</body>
+</html>
